@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Eligibility Checker</title>
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Are you eligible to vote? Check Here</h1>
+    </div>
+
+    <div class="content">
+        
+            <label for="age">Enter your age:</label>
+        
+        <br><br>
+        
+            <input type="number" id="age">
+        
+        
+        <br><br>
+        <label for="result">Result:</label>
+        <br><br>
+   
+            <input type="text" id="result_display">
+       
+        
+    </div>
+    
+        <input type="button" value="CHECK" id="result_btn">
+    
+
+</body>
+
+</html>
+
+<style>
+    body {
+        background-color: lightcyan;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        
+    }
+
+    label {
+        font-size: 50px;
+       
+    }
+
+    h1 {
+        font-size: 60px;
+        
+    }
+    input[type="text"],
+    input[type="number"]{
+        width: 500px;
+        height: 100px;
+        background-color: cadetblue;
+        font-size: 50px;
+        text-align: center;
+        color: azure;
+    }
+    
+    input[type="button"]{
+        height: 50px;
+        width: 500px;
+        margin-top: 20px;
+        background-color:white;
+        color: black;
+        font-size: 20px;
+        font-style: bold;
+    }
+
+    input[type="button"]:hover{
+        background-color: cadetblue;
+    }
+</style>
+
+<script>
+
+    //Get input from user and check if it's correct.
+    let age_input = document.getElementById('age');
+    let btn = document.getElementById('result_btn');
+    let display = document.getElementById('result_display');
+    btn.addEventListener('click', event => {
+        let age = parseInt(age_input.value);
+        if(age >= 18)
+    {
+        display.value = "Eligible";
+    }
+        else
+    {
+        display.value = "Not Eligible";
+    }
+    });
+    
+    
+</script>
